@@ -1,0 +1,27 @@
+services:
+  nuxt:
+    image: ghcr.io/${GITHUB_ACTOR}/my-nuxt-server:latest
+    container_name: frontend-deploy-nuxt
+    command: "npm run start"
+    ports:
+      - "3000:3000"
+    environment:
+      - MAIN_API_URL=${MAIN_API_URL}
+      - AI_BASE_URL=${AI_BASE_URL}
+    restart: always
+    networks:
+      - app
+  nginx:
+    image: "nginx:latest"
+    container_name: frontend-deploy-nginx
+    volumes:
+      - /home/ec2-user/my/vue-frontend/conf:/etc/nginx/conf.d
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
