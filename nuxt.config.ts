@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     './userAnalysis/nuxt.config.ts',
     './kakaoAuthentication/nuxt.config.ts',
     './googleAuthentication/nuxt.config.ts',
+    './githubAuthentication/nuxt.config.ts',
     './keywordAnalysis/nuxt.config.ts',
     './freeCommunity/nuxt.config.ts',
     './subscription/nuxt.config.ts',
