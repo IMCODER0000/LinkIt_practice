@@ -8,6 +8,7 @@
           <div class="social-icons">
             <KakaoLogin/>
             <GoogleLogin/>
+            <GithubLogin/>
           </div>
         </div>
       </div>
@@ -17,11 +18,13 @@
 <script>
 import KakaoLogin  from '../login/ui/KakaoLogin.vue';
 import GoogleLogin  from '../login/ui/GoogleLogin.vue';
+import GithubLogin from "~/account/pages/login/ui/GithubLogin.vue";
 export default {
     name: 'LoginPage',
     components: {
         KakaoLogin,
-        GoogleLogin
+        GoogleLogin,
+        GithubLogin,
     }
 }
 </script>
